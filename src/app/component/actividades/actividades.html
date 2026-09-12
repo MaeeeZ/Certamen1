@@ -1,1 +1,11 @@
-<p>actividades works!</p>
+<h2>{{ mensaje }}</h2>
+
+<div class="talleres-container">
+  @for (taller of talleres; track taller.nombre) {
+    <div class="taller-card">
+      <h3>{{ taller.nombre }}</h3>
+      <p>{{ taller.descripcion }}</p>
+      <p><strong>Horario:</strong> {{ taller.horario }}</p>
+    </div>
+  }
+</div>
