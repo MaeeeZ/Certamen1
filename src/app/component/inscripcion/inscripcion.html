@@ -1,1 +1,39 @@
-<p>inscripcion works!</p>
+<h2>Formulario de Inscripción</h2>
+
+<form [formGroup]="formInscripcion" (ngSubmit)="guardar()">
+  <div>
+    <label>Nombre:</label>
+    <input type="text" formControlName="nombre" />
+  </div>
+
+  <div>
+    <label>Apellido:</label>
+    <input type="text" formControlName="apellido" />
+  </div>
+
+  <div>
+    <label>Correo Electrónico:</label>
+    <input type="email" formControlName="email" />
+  </div>
+
+  <div>
+    <label>Carrera:</label>
+    <input type="text" formControlName="carrera" />
+  </div>
+
+  <div>
+    <label>Actividad:</label>
+    <input type="text" formControlName="actividad" />
+  </div>
+
+  <div>
+    <label>Jornada:</label>
+    <select formControlName="jornada">
+      <option value="">Seleccione jornada</option>
+      <option value="Diurna">Diurna</option>
+      <option value="Vespertina">Vespertina</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="formInscripcion.invalid">Enviar</button>
+</form>
